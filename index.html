@@ -1,0 +1,180 @@
+<!DOCTYPE html><html lang="en" class="no-scrollbar" style="
+    background-color: rgba(0,0,0,0)"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title># KillAnyOne</title>
+  <link rel="icon" href="images/1253265477158043648.png">
+  <link rel="stylesheet" href="css/tailwind.css">
+  <link rel="stylesheet" href="css/sweetalert2.min.css">
+  <link rel="stylesheet" href="css/bootstrap-icons.min.css">
+  <script src="js/chart.js"></script> <!-- Include Chart.js -->
+</head>
+<body class="relative min-h-screen ">
+    <div class="display flex flex-col min-h-screen justify-center items-center gap-5 overflow-hidden" style="
+    background-color: rgba(0,0,0,0);
+    background-image: url('images/328c5940f574.png');background-size: cover;     background-repeat: no-repeat; background-position: center center;
+    ">
+
+ <script>
+  document.addEventListener('contextmenu', function(event) {
+    event.preventDefault();
+  });
+</script> 
+
+<script>
+    let musicArray = [];
+    
+    musicArray.push(`WATCH ME.mp3`);
+    
+    </script>
+    
+    <button id="discord_button" class="btn btn-primary" style="position: fixed; top: 10px; left: 10px; z-index: 1000; background-color: rgba(255, 255, 255, 0.07); border: none; color: white; border-radius: 10px;">
+    <i id="mute_icon" class="bi bi-volume-mute-fill"></i>
+    </button>
+    
+    <script>
+    var sounds = [];
+    musicArray.forEach(music => {
+    sounds.push(new Audio(`music/${music}`));
+    });
+    
+    var currentIndex = 0;
+    
+    function onended(evt) {
+    currentIndex = (currentIndex + 1) % sounds.length;
+    if (!sounds[currentIndex].muted) {
+    sounds[currentIndex].play();
+    }
+    }
+    
+    sounds.forEach(function (sound) {
+    sound.onended = onended;
+    });
+    
+    document.addEventListener('DOMContentLoaded', () => {
+    const discordButton = document.getElementById('discord_button');
+    const muteIcon = document.getElementById('mute_icon');
+    
+    // Set initial state
+    sounds[currentIndex].muted = true;
+    sounds[currentIndex].play();
+    
+    discordButton.addEventListener('click', () => {
+    if (sounds[currentIndex].muted) {
+    sounds[currentIndex].muted = false;
+    muteIcon.classList.remove('bi-volume-mute-fill');
+    muteIcon.classList.add('bi-volume-up-fill');
+    sounds[currentIndex].play(); // Start playing the song when unmuted
+    } else {
+    sounds[currentIndex].muted = true;
+    muteIcon.classList.remove('bi-volume-up-fill');
+    muteIcon.classList.add('bi-volume-mute-fill');
+    sounds[currentIndex].pause(); // Pause the song when muted
+    }
+    });
+    });
+    </script>
+    
+    <script>
+    let musicArray = [];
+    
+    musicArray.push(`WATCH ME.mp3`);
+    
+    </script>
+
+    <div class=" rounded-[25px] box-border justify-between max-w-[900px] w-full py-20 p-4 mx-auto" style="background: rgba(0, 0, 0, 0);">
+        <div class="flex items-center gap-5 flex-col">
+        
+            <img id="profileImage" src="images/592a79644ce2.png" alt="Profile Image" class="w-44 h-44 object-cover cursor-pointer " style="border-color: rgba(0,0,0,0); border-width: 0px; ">
+        
+
+        <div>
+            <h2 class="font-black text-2xl" style="color: rgba(255,255,255,1);"># KillAnyOne</h2>
+            
+            <p id="description" style="color: rgba(255,255,255,1);">
+            <span id="rotating-text" class="border-r-2 animate-blink text-xl" style="border-color: rgba(255,255,255,1);">#</span>
+            </p>
+            
+        </div>
+
+    </div>
+    <div class="flex flex-row sm-wrapper mt-5" style="justify-content: center;">
+      
+        <a href="https://www.instagram.com/o9sg/" target="_blank" class="icon-social">
+        <img class="w-[37px] h-[37px]" src="images/instagram_1.png" alt="Twitter">
+        </a>
+        <a href="https://discord.com/invite/ix" target="_blank" class="icon-social ml-5">
+        <img class="w-[37px] h-[37px]" src="images/discord_icon.png" alt="Discord">
+        
+      </div>
+
+      
+      </div>
+
+
+       
+
+      
+        <!-- Discord card -->
+        <div class="bg-white/7 glass border-2 border-white/5 rounded-[25px] box-border justify-between max-w-fit w-full px-0.5 mx-auto" style="background: rgba(0, 0, 0, 0);">
+          <div class="card mx-auto discord-card">
+            <div class="card-body py-5">
+              <div class="flex relative items-center">
+                <div class="relative">
+                    <img src="images/da220efce7f095347c48e0b19ecdfa67.png" alt="profile picture" class="w-14 rounded-full">
+                    <img src="images/R.png" alt="status" class="absolute right-0 bottom-[5px] w-3">
+                </div>
+                <div class="flex flex-col justify-center ml-4">
+                  <div class="flex flex-row justify-center">
+                    <h5 class="text-white mb-0"></h5>
+                  <div class="flex items-center gap-0.2">
+                  </div>
+                  </div>
+                  <h5 class="text-[rgba(255,255,255,0.7)] italic text-sm mt-2"><3</h5>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      
+      
+    </div>
+
+    
+
+      <script>
+        // Inject Data object into the global scope
+        const Data = {"_id":"668bec237aa0b6fd09af271d","id":"1","__v":0,"backgroundColor":"rgba(0,0,0,0)","description_input":["KillAnyOne"],"isInline":false,"isSquareOrCircle":false,"name_input":"# Error","skill_input":"","skillsObject":[],"socialMediaBackground":"rgba(0,0,0,0)","socialObject":[{"link":"https://www.instagram.com/o721/","icon":"https://cdn.discordapp.com/attachments/1283515581575991409/1299282988307320854/instagram_1.png?ex=671ca313&is=671b5193&hm=71a74899053c99ff12483ce5279915944632a3e0965984d93db765cffd642f8b&"}],"strokeColor":"rgba(0,0,0,0)","textColor":"rgba(255,255,255,1)","user_photo":"https://i.ibb.co/9cznm26/592a79644ce2.png","whatsapp_input":"","withBanner":true,"user_banner":"https://i.ibb.co/LZRvMVF/faf32f73fee7.gif","background_image":"https://cdn.discordapp.com/attachments/1254434505805008947/1299476159028924466/black_hawks_2.png?ex=671d56fb&is=671c057b&hm=d2b636f40ad91bb383bc6dfa6f3bd06b533865deb36d8d7b574254c236df9540&","background_image_activated":true,"icon_place":"center","buttonObject":[],"whichDesign":false,"music_background":"rgba(1,1,1,0.15)","stroke_width":0,"musicordiscord":"discord","discordid":"1027878747547893760","linkstext":"404","enableProfilePicture":true,"enableBackgroundImage":true,"enableTypewriterEffect":true,"enableContainer":false};
+    </script>
+
+    <script src="js/musicPlayer.js"></script>
+
+    <script>
+        const descriptions = Data.description_input;
+        let index = 0;
+        const rotatingTextElement = document.getElementById('rotating-text');
+
+        function typeWriter(text, i, callback) {
+            if (i < text.length) {
+                rotatingTextElement.innerHTML += text.charAt(i);
+                setTimeout(() => typeWriter(text, i + 1, callback), 100);
+            } else {
+                setTimeout(() => {
+                    rotatingTextElement.innerHTML = '';
+                    callback();
+                }, 2000);
+            }
+        }
+
+        function rotateTexts() {
+            typeWriter(descriptions[index], 0, () => {
+                index = (index + 1) % descriptions.length;
+                rotateTexts();
+            });
+        }
+
+        rotateTexts(); // Start text rotation animation
+
+    </script>
+</body></html>
