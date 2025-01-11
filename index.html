@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        * {
+            filter: grayscale(1);
+            overflow: hidden;
+            overflow-y: hidden;
+        }
+        body {
+            font-family: monospace;
+            text-align: center;
+            background-color: #000;
+            color: #000000;
+            text-shadow: 0 0 1mm white;
+            text-shadow: 0 0 1mm white;
+            text-shadow: 0 0 1mm white;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center; /* Center items vertically */
+            margin: 0;
+            padding-top: 50px; /* Move the content up by 50px from the center */
+        }
+        p {
+            font-size: 18px;
+            color: #ffffff;
+        }
+        .info {
+            font-weight: bold;
+            font-size: 20px;
+            color: rgb(0, 0, 0); /* Set the color to red */
+        }
+        iframe {
+            border: none;
+            visibility: hidden; /* Hide the iframe */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Move the iframe behind other content */
+        }
+        audio {
+            display: none; /* Hide audio controls */
+        }
+    </style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viva Hawks.</title>
+</head>
+<body>
+    <div>
+        <p style="font-size: xx-large;">Black Hawks Group.</p>
+        <p>discord.gg/ix</p>
+        <img src="obl.jpg" style="width: 10cm;">
+        <p>Your IP Address: <span class="info" id="ip">Loading...</span></p>
+        <p>Your City: <span class="info" id="city">Loading...</span></p>
+        <p>Your Region: <span class="info" id="region">Loading...</span></p>
+        <p>Your Country: <span class="info" id="country">Loading...</span></p>
+        <p>Your Time Zone: <span class="info" id="timezone">Loading...</span></p>
+
+        <!-- Background audio -->
+        <audio autoplay loop>
+            <source src="nigger.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <script>
+        // Fetch the user's IP address and location info using ip-api.com
+        fetch('http://ip-api.com/json/')
+            .then(response => response.json())
+            .then(data => {
+                // Display the IP, City, Region, Country, and Time Zone
+                document.getElementById('ip').textContent = data.query;
+                document.getElementById('city').textContent = data.city;
+                document.getElementById('region').textContent = data.regionName;
+                document.getElementById('country').textContent = data.country;
+                document.getElementById('timezone').textContent = data.timezone;
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+                document.getElementById('ip').textContent = 'Unable to fetch IP';
+                document.getElementById('city').textContent = 'Unable to fetch City';
+                document.getElementById('region').textContent = 'Unable to fetch Region';
+                document.getElementById('country').textContent = 'Unable to fetch Country';
+                document.getElementById('timezone').textContent = 'Unable to fetch Time Zone';
+            });
+    </script>
+</body>
+</html>
