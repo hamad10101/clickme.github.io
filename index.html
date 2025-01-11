@@ -68,25 +68,18 @@
     </div>
 
     <script>
-        // Fetch the user's IP address and location info using ip-api.com
-        fetch('http://ip-api.com/json/')
+        // Use ip-api's free API
+        fetch("http://ip-api.com/json/")
             .then(response => response.json())
             .then(data => {
-                // Display the IP, City, Region, Country, and Time Zone
-                document.getElementById('ip').textContent = data.query;
-                document.getElementById('city').textContent = data.city;
-                document.getElementById('region').textContent = data.regionName;
-                document.getElementById('country').textContent = data.country;
-                document.getElementById('timezone').textContent = data.timezone;
+                // Populate the HTML with the fetched data
+                document.getElementById("ip").textContent = data.query;
+                document.getElementById("city").textContent = data.city;
+                document.getElementById("region").textContent = data.regionName;
+                document.getElementById("country").textContent = data.country;
+                document.getElementById("timezone").textContent = data.timezone;
             })
-            .catch(error => {
-                console.error('Error fetching data:', error);
-                document.getElementById('ip').textContent = 'Unable to fetch IP';
-                document.getElementById('city').textContent = 'Unable to fetch City';
-                document.getElementById('region').textContent = 'Unable to fetch Region';
-                document.getElementById('country').textContent = 'Unable to fetch Country';
-                document.getElementById('timezone').textContent = 'Unable to fetch Time Zone';
-            });
+            .catch(error => console.error("Error fetching data: ", error));
     </script>
 </body>
 </html>
