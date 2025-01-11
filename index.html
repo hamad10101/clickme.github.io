@@ -60,15 +60,18 @@
         <p>Your Country: <span class="info" id="country">Loading...</span></p>
         <p>Your Time Zone: <span class="info" id="timezone">Loading...</span></p>
     <script>
-        // Use ip-api's free API
-        fetch("http://ip-api.com/json/")
+        // Replace with your ipgeolocation.io API key
+        const apiKey = '853a19a5d33b42df8fc8e6c76c740e65';  // Put your actual API key here
+
+        // Use ipgeolocation.io's API
+        fetch(`https://api.ipgeolocation.io/ipgeo?apiKey=${apiKey}`)
             .then(response => response.json())
             .then(data => {
                 // Populate the HTML with the fetched data
-                document.getElementById("ip").textContent = data.query;
+                document.getElementById("ip").textContent = data.ip;
                 document.getElementById("city").textContent = data.city;
-                document.getElementById("region").textContent = data.regionName;
-                document.getElementById("country").textContent = data.country;
+                document.getElementById("region").textContent = data.state_prov;
+                document.getElementById("country").textContent = data.country_name;
                 document.getElementById("timezone").textContent = data.timezone;
             })
             .catch(error => console.error("Error fetching data: ", error));
